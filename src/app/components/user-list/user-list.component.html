@@ -1,12 +1,9 @@
 <h2>User Details: </h2>
 <ul>
   <li *ngFor="let user of users">
-    <ul>
-    <li>Name : {{user.name}}</li>
-    <li>Email : {{user.email}}</li>
-    <li>Phone : {{user.phone}}</li>
-    <li>City : {{user.city}}</li>
-    <li>Profession : {{user.profession}}</li> 
-    </ul>
+    <a href="#" (click)="selectUser(user)">
+      Name : {{user.name}} , Email : {{user.email}}
+    </a>
   </li>
 </ul>
+<app-user-detail [user]="selectedUser"></app-user-detail>

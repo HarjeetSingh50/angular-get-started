@@ -9,12 +9,16 @@ import {UserService} from '../../services/user.service';
 })
 export class UserListComponent implements OnInit {
   users : User[] = [];
-  
+  selectedUser: User;
+    
   constructor( private userService: UserService ) { 
     this.users = userService.getAll();
   }
 
   ngOnInit() {
   }
-
+  
+  selectUser(user:User){
+    this.selectedUser = user;
+  }
 }
